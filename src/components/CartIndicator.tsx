@@ -4,8 +4,8 @@ import Typography from "./Typography"
 
 const CartIndicator: FC = () => {
   return (
-    <div className="flex gap-x-3 items-center border-2 border-gray-200 rounded-full p-1.5">
-      <div className="w-14 h-14 grid place-content-center text-white bg-[#274C5B] rounded-full">
+    <div className="flex items-center gap-x-3 rounded-full border-2 border-gray-200 p-1">
+      <div className="grid h-11 w-11 place-content-center rounded-full bg-[#274C5B] text-white">
         <GrCart size={20} />
       </div>
       <Typography className="text-lg" variant="title">
