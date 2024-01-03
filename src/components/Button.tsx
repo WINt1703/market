@@ -1,6 +1,7 @@
 import { CustomFlowbiteTheme, Button as FlowbiteButton } from "flowbite-react"
 import { ButtonHTMLAttributes, FC } from "react"
 import { FaArrowRight } from "react-icons/fa6"
+
 type ButtonProps = {
   variant?: "primary" | "secondary" | "outline"
   withoutArrow?: boolean
