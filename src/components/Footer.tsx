@@ -69,21 +69,25 @@ const Footer: FC = () => {
         </Typography>
         <div className="flex justify-center gap-x-4">
           <FlowbiteFooterIcon
+            target="_blank"
             href="https://instagram.com"
             theme={footerTheme.icon}
             icon={FaInstagram}
           />
           <FlowbiteFooterIcon
+            target="_blank"
             href="https://facebook.com"
             theme={footerTheme.icon}
             icon={FaFacebook}
           />
           <FlowbiteFooterIcon
+            target="_blank"
             href="https://twitter.com"
             theme={footerTheme.icon}
             icon={FaX}
           />
           <FlowbiteFooterIcon
+            target="_blank"
             href="https://www.pinterest.ca/"
             theme={footerTheme.icon}
             icon={FaPinterest}
