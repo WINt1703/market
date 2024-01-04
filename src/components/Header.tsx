@@ -5,6 +5,9 @@ import CartIndicator from "./CartIndicator"
 import ProductSearch from "./ProductSearch"
 import Typography from "./Typography"
 
+const linkStyle =
+  "font-extrabold text-[#274C5B] hover:text-[#5db0d1] active:text-[#036c96]"
+
 const Header: FC = () => {
   return (
     <div className="flex items-center gap-x-24">
@@ -15,22 +18,22 @@ const Header: FC = () => {
         </Typography>
       </div>
       <nav className="space-x-9">
-        <Link href="/" className="font-extrabold text-[#274C5B]">
+        <Link href="/" className={linkStyle}>
           Home
         </Link>
-        <Link href="/about" className="font-extrabold text-[#274C5B]">
+        <Link href="/about" className={linkStyle}>
           About
         </Link>
-        <Link href="/" className="font-extrabold text-[#274C5B]">
+        <Link href="/" className={linkStyle}>
           Pages
         </Link>
-        <Link href="/shop" className="font-extrabold text-[#274C5B]">
+        <Link href="/shop" className={linkStyle}>
           Shop
         </Link>
-        <Link href="/projects" className="font-extrabold text-[#274C5B]">
+        <Link href="/projects" className={linkStyle}>
           Projects
         </Link>
-        <Link href="/news" className="font-extrabold text-[#274C5B]">
+        <Link href="/news" className={linkStyle}>
           News
         </Link>
       </nav>
