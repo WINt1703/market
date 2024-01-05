@@ -8,7 +8,7 @@ type ButtonProps = {
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
 const customTheme: CustomFlowbiteTheme["button"] = {
-  base: "font-bold !ring-0 hover:opacity-95 active:outline outline-2",
+  base: "font-bold !ring-0 hover:opacity-95 py-2 px-3 active:outline outline-2",
   color: {
     primary: "bg-[#274C5B] text-white outline-cyan-500",
     secondary: "bg-[#EFD372] text-[#274C5B] outline-amber-400",
@@ -27,7 +27,7 @@ const Button: FC<ButtonProps> = ({
     <FlowbiteButton theme={customTheme} color={variant ?? "primary"} {...rest}>
       {children}
       {!withoutArrow && (
-        <span className="ml-2 h-4 w-4 grid place-content-center rounded-full text-white bg-[#335B6B] ">
+        <span className="ml-2 grid h-4 w-4 place-content-center rounded-full bg-[#335B6B] text-white ">
           <FaArrowRight size={10} />
         </span>
       )}
