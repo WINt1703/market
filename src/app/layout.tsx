@@ -19,7 +19,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="en">
       <body className={defaultFont.className}>
-        <div className="mx-[120px] mt-[50px]">
+        <div className="mx-[120px] my-[50px]">
           <Header />
         </div>
         {children}
