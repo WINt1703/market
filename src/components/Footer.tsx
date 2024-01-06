@@ -27,8 +27,8 @@ const footerTheme: CustomFlowbiteTheme["footer"] = {
     base: "flex justify-center gap-x-12 h-72",
   },
   icon: {
-    base: "block bg-[#EFF6F1] hover:bg-[#c3f9d2] grid place-content-center w-14 h-14 rounded-full",
-    size: "w-6 h-6 fill-primary hover:fill-[#13769d]",
+    base: "block group bg-info-100 hover:bg-info-300 grid place-content-center w-14 h-14 rounded-full",
+    size: "w-6 h-6 group-hover:fill-primary-100 fill-primary",
   },
 }
 
