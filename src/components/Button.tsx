@@ -10,10 +10,9 @@ type ButtonProps = {
 const customTheme: CustomFlowbiteTheme["button"] = {
   base: "font-bold !ring-0 hover:opacity-95 py-2 px-3 active:outline outline-2",
   color: {
-    primary: "bg-[#274C5B] text-white outline-cyan-500",
-    secondary: "bg-[#EFD372] text-[#274C5B] outline-amber-400",
-    outline:
-      "bg-white text-[#274C5B] border-2 border-[#274C5B] outline-gray-300",
+    primary: "bg-primary text-white outline-cyan-500",
+    secondary: "bg-secondary text-primary outline-amber-400",
+    outline: "bg-white text-primary border-2 border-primary outline-gray-300",
   },
 }
 

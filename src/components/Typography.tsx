@@ -30,11 +30,13 @@ const sectionFont = Yellowtail({
 const getStyleByVariant = (variant: Variant): string => {
   switch (variant) {
     case "title":
-      return "text-[#274C5B] font-semibold"
+      return "text-primary font-semibold"
     case "description":
       return "text-gray-500 leading-7"
     case "section":
-      return "text-[#7EB693]"
+      return "text-info"
+    case "theme":
+      return "text-primary"
   }
 }
 

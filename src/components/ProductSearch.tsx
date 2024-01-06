@@ -12,13 +12,13 @@ const ProductSearch: FC = () => {
       }`}
     >
       <input
-        className={`border-b-2 border-gray-200 text-lime-600 outline-none transition-[width] focus:border-[#7EB693] ${
+        className={`border-b-2 border-gray-200 text-lime-600 outline-none transition-[width] focus:border-info ${
           toggle ? "ml-3 w-52" : "w-0"
         }`}
       />
       <div
         onClick={() => setToggle((previous) => !previous)}
-        className="grid h-11 w-11 place-content-center rounded-full bg-[#7EB693] text-white"
+        className="grid h-11 w-11 place-content-center rounded-full bg-info text-white"
       >
         <IoMdSearch size={25} />
       </div>

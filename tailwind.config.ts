@@ -1,3 +1,4 @@
+import FlowbitePlugin from "flowbite/plugin"
 import type { Config } from "tailwindcss"
 
 const config: Config = {
@@ -9,7 +10,16 @@ const config: Config = {
   ],
   theme: {
     extend: {},
+    colors: {
+      primary: {
+        "100": "#5db0d1",
+        "300": "#036c96",
+        DEFAULT: "#274C5B",
+      },
+      secondary: "#EFD372",
+      info: "#7EB693",
+    },
   },
-  plugins: [require("flowbite/plugin")],
+  plugins: [FlowbitePlugin],
 }
 export default config

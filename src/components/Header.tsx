@@ -5,7 +5,7 @@ import Logo from "./Logo"
 import ProductSearch from "./ProductSearch"
 
 const linkStyle =
-  "font-extrabold text-[#274C5B] hover:text-[#5db0d1] active:text-[#036c96]"
+  "font-extrabold text-primary hover:text-primary-100 active:text-primary-300"
 
 const Header: FC = () => {
   return (

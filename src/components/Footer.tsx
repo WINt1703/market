@@ -15,7 +15,7 @@ import Typography from "./Typography"
 
 const footerTheme: CustomFlowbiteTheme["footer"] = {
   title: {
-    base: "text-[#274C5B] font-bold text-xl",
+    base: "text-primary font-bold text-xl",
   },
   groupLink: {
     base: "space-y-6 text-gray-500",
@@ -28,7 +28,7 @@ const footerTheme: CustomFlowbiteTheme["footer"] = {
   },
   icon: {
     base: "block bg-[#EFF6F1] hover:bg-[#c3f9d2] grid place-content-center w-14 h-14 rounded-full",
-    size: "w-6 h-6 fill-[#274C5B] hover:fill-[#13769d]",
+    size: "w-6 h-6 fill-primary hover:fill-[#13769d]",
   },
 }
 
