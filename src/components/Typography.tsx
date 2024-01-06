@@ -1,7 +1,7 @@
 import { Open_Sans, Yellowtail } from "next/font/google"
 import { DetailedHTMLProps, FC, HTMLAttributes } from "react"
 
-type Variant = "title" | "description" | "section"
+type Variant = "title" | "description" | "section" | "theme"
 
 type TypographyProps = {
   variant: Variant
@@ -36,7 +36,7 @@ const getStyleByVariant = (variant: Variant): string => {
     case "section":
       return "text-info"
     case "theme":
-      return "text-primary"
+      return "text-primary font-extrabold text-5xl"
   }
 }
 
