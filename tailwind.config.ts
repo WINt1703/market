@@ -17,7 +17,11 @@ const config: Config = {
         DEFAULT: "#274C5B",
       },
       secondary: "#EFD372",
-      info: "#7EB693",
+      info: {
+        "100": "#EFF6F1",
+        "300": "#c3f9d2",
+        DEFAULT: "#7EB693",
+      },
     },
   },
   plugins: [FlowbitePlugin],
