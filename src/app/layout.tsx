@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
+import Newsletter from "@/components/Newsletter"
 import type { Metadata } from "next"
 import { Roboto } from "next/font/google"
 import { FC, PropsWithChildren } from "react"
@@ -23,6 +24,9 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
           <Header />
         </div>
         {children}
+        <div className="my-20 flex justify-center">
+          <Newsletter />
+        </div>
         <Footer />
       </body>
     </html>
