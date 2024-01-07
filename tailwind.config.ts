@@ -1,5 +1,5 @@
-import FlowbitePlugin from "flowbite/plugin"
-import type { Config } from "tailwindcss"
+import FlowbitePlugin from "flowbite/plugin";
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -10,6 +10,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "news-letter":
+          "url('https://wint1703.sirv.com/market/news-letter.png')",
+        logo: "url('https://wint1703.sirv.com/market/logo.svg')",
+      },
       colors: {
         primary: {
           "100": "#5db0d1",
@@ -26,5 +31,5 @@ const config: Config = {
     },
   },
   plugins: [FlowbitePlugin],
-}
-export default config
+};
+export default config;
