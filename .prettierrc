@@ -1,0 +1,8 @@
+{
+	"useTabs": true,
+	"trailingComma": "none",
+	"singleQuote": false,
+	"semi": false,
+  "bracketSameLine": true,
+	"plugins": ["@trivago/prettier-plugin-sort-imports"]
+}
