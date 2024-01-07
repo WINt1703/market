@@ -1,6 +1,5 @@
 import FlowbitePlugin from "flowbite/plugin"
 import type { Config } from "tailwindcss"
-import Colors from "tailwindcss/colors"
 
 const config: Config = {
   content: [
@@ -10,19 +9,19 @@ const config: Config = {
     "./node_modules/flowbite-react/lib/**/*.js",
   ],
   theme: {
-    extend: {},
-    colors: {
-      ...Colors,
-      primary: {
-        "100": "#5db0d1",
-        "300": "#036c96",
-        DEFAULT: "#274C5B",
-      },
-      secondary: "#EFD372",
-      info: {
-        "100": "#EFF6F1",
-        "300": "#c3f9d2",
-        DEFAULT: "#7EB693",
+    extend: {
+      colors: {
+        primary: {
+          "100": "#5db0d1",
+          "300": "#036c96",
+          DEFAULT: "#274C5B",
+        },
+        secondary: "#EFD372",
+        info: {
+          "100": "#EFF6F1",
+          "300": "#c3f9d2",
+          DEFAULT: "#7EB693",
+        },
       },
     },
   },
