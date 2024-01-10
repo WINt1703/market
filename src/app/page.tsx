@@ -17,6 +17,7 @@ const CardOfferWrapper: FC<PropsWithChildren & { backgroundName: string }> = ({
 const Home: FC = () => {
 	return (
 		<div>
+			{/* Nature food section */}
 			<div className="grid aspect-video grid-flow-col grid-cols-2 place-items-center bg-natural-food bg-cover">
 				<div className="max-w-[340px] space-y-3">
 					<Typography variant="section">100% Natural Food</Typography>
@@ -26,6 +27,7 @@ const Home: FC = () => {
 					<Button variant="secondary">Explore Now</Button>
 				</div>
 			</div>
+			{/* Offers section */}
 			<div className="flex justify-center gap-x-8 py-40">
 				<CardOfferWrapper backgroundName="bg-fresh-fruits-offer">
 					<div className="flex flex-col justify-center pl-5 ">
