@@ -36,7 +36,7 @@ const Button: FC<ButtonProps> = ({
 		<button
 			className={twMerge(
 				theme.base,
-				variant && theme.color[variant],
+				theme.color[variant ?? "primary"],
 				className
 			)}
 			{...rest}>
