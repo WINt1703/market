@@ -12,7 +12,7 @@ const Newsletter: FC<NewsletterProps> = () => {
 				<Typography variant="theme" className="max-w-[350px] text-white">
 					Subscribe to our Newsletter
 				</Typography>
-				<div className="space-x-1 ">
+				<div className="flex gap-x-1">
 					<Input type="email" placeholder="Your Email Address" />
 					<Button>Subscribe</Button>
 				</div>
