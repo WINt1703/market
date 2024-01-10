@@ -34,7 +34,7 @@ const getStyleByVariant = (variant: Variant): string => {
 		case "description":
 			return "text-gray-500 leading-7"
 		case "section":
-			return "text-info"
+			return "text-info text-2xl"
 		case "theme":
 			return "text-primary font-extrabold text-5xl"
 	}
@@ -61,8 +61,7 @@ const Typography: FC<TypographyProps> = ({
 		<p
 			{...rest}
 			style={getFontByVariant(variant)}
-			className={`${getStyleByVariant(variant)} ${className ?? ""}`}
-		>
+			className={`${getStyleByVariant(variant)} ${className ?? ""}`}>
 			{children}
 		</p>
 	)
