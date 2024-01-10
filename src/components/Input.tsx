@@ -1,4 +1,5 @@
 import { DetailedHTMLProps, FC, InputHTMLAttributes, forwardRef } from "react"
+import { twMerge } from "tailwind-merge"
 
 type InputProps = Omit<
 	DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
@@ -10,7 +11,7 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
 		<input
 			ref={ref}
 			{...rest}
-			className={`rounded-md p-3 placeholder:italic ${className ?? ""}`}
+			className={twMerge("rounded-md p-3 placeholder:italic", className)}
 		/>
 	)
 )

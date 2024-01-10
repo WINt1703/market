@@ -1,5 +1,6 @@
 import { Open_Sans, Yellowtail } from "next/font/google"
 import { DetailedHTMLProps, FC, HTMLAttributes } from "react"
+import { twMerge } from "tailwind-merge"
 
 type Variant = "title" | "description" | "section" | "theme"
 
@@ -61,7 +62,7 @@ const Typography: FC<TypographyProps> = ({
 		<p
 			{...rest}
 			style={getFontByVariant(variant)}
-			className={`${getStyleByVariant(variant)} ${className ?? ""}`}>
+			className={twMerge(getStyleByVariant(variant), className)}>
 			{children}
 		</p>
 	)
