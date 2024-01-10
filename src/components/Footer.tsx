@@ -11,7 +11,12 @@ import {
 } from "flowbite-react"
 import Link from "next/link"
 import type { FC } from "react"
-import { FaFacebook, FaInstagram, FaPinterest, FaX } from "react-icons/fa6"
+import {
+	FaFacebook,
+	FaInstagram,
+	FaPinterest,
+	FaXTwitter
+} from "react-icons/fa6"
 
 const footerTheme: CustomFlowbiteTheme["footer"] = {
 	title: {
@@ -84,7 +89,7 @@ const Footer: FC = () => {
 						target="_blank"
 						href="https://twitter.com"
 						theme={footerTheme.icon}
-						icon={FaX}
+						icon={FaXTwitter}
 					/>
 					<FlowbiteFooterIcon
 						target="_blank"
