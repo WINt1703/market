@@ -6,11 +6,8 @@ import { FC } from "react"
 const Home: FC = () => {
 	return (
 		<div>
-			{/* Nature food section */}
 			<NatureFoodSection />
-			{/* Offers section */}
 			<OfferSection />
-			{/* About us section */}
 			<AboutUsSection />
 		</div>
 	)
