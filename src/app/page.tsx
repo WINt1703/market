@@ -1,3 +1,4 @@
+import AboutUsSection from "@/app-sections/home/AboutUsSection"
 import Button from "@/components/Button"
 import Typography from "@/components/Typography"
 import { FC, PropsWithChildren } from "react"
@@ -52,6 +53,8 @@ const Home: FC = () => {
 					</div>
 				</CardOfferWrapper>
 			</div>
+			{/* About us section */}
+			<AboutUsSection />
 		</div>
 	)
 }
