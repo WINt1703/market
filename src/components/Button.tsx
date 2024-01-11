@@ -28,17 +28,13 @@ const theme: ButtonTheme = {
 const Button: FC<ButtonProps> = ({
 	children,
 	withoutArrow,
-	variant,
+	variant = "primary",
 	className,
 	...rest
 }) => {
 	return (
 		<button
-			className={twMerge(
-				theme.base,
-				theme.color[variant ?? "primary"],
-				className
-			)}
+			className={twMerge(theme.base, theme.color[variant], className)}
 			{...rest}>
 			{children}
 			{!withoutArrow && (
