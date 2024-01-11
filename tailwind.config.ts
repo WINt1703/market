@@ -1,4 +1,5 @@
-import FlowbitePlugin from "flowbite/plugin"
+import Daisy from "daisyui"
+import DaisyThemes from "daisyui/src/theming/themes"
 import type { Config } from "tailwindcss"
 
 const config: Config = {
@@ -35,6 +36,18 @@ const config: Config = {
 			}
 		}
 	},
-	plugins: [FlowbitePlugin]
+	plugins: [Daisy],
+	daisyui: {
+		themes: [
+			{
+				light: {
+					...DaisyThemes.light,
+					primary: "#274C5B",
+					secondary: "#EFD372",
+					info: "#7EB693"
+				}
+			}
+		]
+	}
 }
 export default config

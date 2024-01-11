@@ -1,14 +1,5 @@
 import Logo from "./Logo"
 import Typography from "./Typography"
-import {
-	CustomFlowbiteTheme,
-	Footer as FlowbiteFooter,
-	FooterIcon as FlowbiteFooterIcon,
-	FooterLink as FlowbiteFooterLink,
-	FooterLinkGroup as FlowbiteFooterLinkGroup,
-	FooterTitle as FlowbiteFooterTitle,
-	FooterDivider
-} from "flowbite-react"
 import Link from "next/link"
 import type { FC } from "react"
 import {
@@ -18,30 +9,13 @@ import {
 	FaXTwitter
 } from "react-icons/fa6"
 
-const footerTheme: CustomFlowbiteTheme["footer"] = {
-	title: {
-		base: "text-primary font-bold text-xl"
-	},
-	groupLink: {
-		base: "space-y-6 text-gray-500"
-	},
-	divider: {
-		base: "h-full mt-3 w-0.5 bg-neutral-100"
-	},
-	root: {
-		base: "flex justify-center gap-x-12 h-72"
-	},
-	icon: {
-		base: "block group bg-info-100 hover:bg-info-300 grid place-content-center w-14 h-14 rounded-full",
-		size: "w-6 h-6 group-hover:fill-primary-100 fill-primary"
-	}
-}
-
 const Footer: FC = () => {
 	return (
-		<FlowbiteFooter theme={footerTheme}>
+		<div className="flex h-72 justify-center gap-x-12">
 			<div className="space-y-8 text-end">
-				<FlowbiteFooterTitle theme={footerTheme.title} title="Contact Us" />
+				<Typography variant="title" className="text-xl">
+					Contact Us
+				</Typography>
 
 				<div className="text-end">
 					<span className="block text-lg font-black text-gray-600">Email</span>
@@ -64,7 +38,8 @@ const Footer: FC = () => {
 					</Typography>
 				</div>
 			</div>
-			<FooterDivider theme={footerTheme.divider} />
+
+			<hr className="mt-3 h-full w-0.5 bg-neutral-100" />
 
 			<div className="max-w-[500px] space-y-7 text-center">
 				<Logo />
@@ -73,54 +48,59 @@ const Footer: FC = () => {
 					wholesome food choices.
 				</Typography>
 				<div className="flex justify-center gap-x-4">
-					<FlowbiteFooterIcon
-						target="_blank"
-						href="https://instagram.com"
-						theme={footerTheme.icon}
-						icon={FaInstagram}
-					/>
-					<FlowbiteFooterIcon
+					<Link
 						target="_blank"
 						href="https://facebook.com"
-						theme={footerTheme.icon}
-						icon={FaFacebook}
-					/>
-					<FlowbiteFooterIcon
+						className="group grid h-14 w-14 place-content-center rounded-full bg-info-100 hover:bg-info-300">
+						<FaInstagram className="h-6 w-6 fill-primary group-hover:fill-primary-100" />
+					</Link>
+					<Link
 						target="_blank"
-						href="https://twitter.com"
-						theme={footerTheme.icon}
-						icon={FaXTwitter}
-					/>
-					<FlowbiteFooterIcon
+						href="https://facebook.com"
+						className="group grid h-14 w-14 place-content-center rounded-full bg-info-100 hover:bg-info-300">
+						<FaFacebook className="h-6 w-6 fill-primary group-hover:fill-primary-100" />
+					</Link>
+					<Link
 						target="_blank"
-						href="https://www.pinterest.ca/"
-						theme={footerTheme.icon}
-						icon={FaPinterest}
-					/>
+						href="https://facebook.com"
+						className="group grid h-14 w-14 place-content-center rounded-full bg-info-100 hover:bg-info-300">
+						<FaXTwitter className="h-6 w-6 fill-primary group-hover:fill-primary-100" />
+					</Link>
+					<Link
+						target="_blank"
+						href="https://facebook.com"
+						className="group grid h-14 w-14 place-content-center rounded-full bg-info-100 hover:bg-info-300">
+						<FaPinterest className="h-6 w-6 fill-primary group-hover:fill-primary-100" />
+					</Link>
 				</div>
 			</div>
-			<FooterDivider theme={footerTheme.divider} />
+
+			<hr className="mt-3 h-full w-0.5 bg-neutral-100" />
+
 			<div className="space-y-7">
-				<FlowbiteFooterTitle theme={footerTheme.title} title="Utility Pages" />
-				<FlowbiteFooterLinkGroup theme={footerTheme.groupLink} col>
-					<FlowbiteFooterLink as={Link} href="/">
+				<Typography variant="title" className="text-xl">
+					Utility Pages
+				</Typography>
+
+				<div className="flex flex-col space-y-6 text-gray-500">
+					<Link className="link" href="/">
 						Style Guide
-					</FlowbiteFooterLink>
-					<FlowbiteFooterLink as={Link} href="/404">
+					</Link>
+					<Link className="link" href="/">
 						404 Not Found
-					</FlowbiteFooterLink>
-					<FlowbiteFooterLink as={Link} href="/">
+					</Link>
+					<Link className="link" href="/">
 						Password Protected
-					</FlowbiteFooterLink>
-					<FlowbiteFooterLink as={Link} href="/">
+					</Link>
+					<Link className="link" href="/">
 						License
-					</FlowbiteFooterLink>
-					<FlowbiteFooterLink as={Link} href="/">
+					</Link>
+					<Link className="link" href="/">
 						Changelog
-					</FlowbiteFooterLink>
-				</FlowbiteFooterLinkGroup>
+					</Link>
+				</div>
 			</div>
-		</FlowbiteFooter>
+		</div>
 	)
 }
 export default Footer
