@@ -28,14 +28,14 @@ const ProductItem: FC<ProductItemProps> = ({
 					className="object-cover drop-shadow-lg"
 				/>
 			</div>
-			<Typography variant="title" className="text-sm">
+			<Typography variant="title" className="truncate text-sm">
 				{name}
 			</Typography>
 
 			<hr />
 			<div className="flex w-full justify-between text-sm">
 				{discount ? (
-					<Typography variant="title">
+					<Typography variant="title" className="text-green-400">
 						<span className="font-normal text-gray-400 line-through">
 							${price}
 						</span>{" "}
