@@ -4,7 +4,7 @@ import type { FC } from "react"
 
 const OurProductsSection: FC = () => {
 	return (
-		<section>
+		<section className="mt-32">
 			<Typography variant="section" className="text-center">
 				Category
 			</Typography>
