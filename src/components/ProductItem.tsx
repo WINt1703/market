@@ -20,7 +20,7 @@ const ProductItem: FC<ProductItemProps> = ({
 	return (
 		<div className="block min-h-[280px] min-w-[250px] space-y-3 rounded-3xl bg-zinc-100 p-3">
 			<span className="badge badge-primary">{tag}</span>
-			<div className="relative mx-auto h-36 w-36">
+			<div className="relative mx-auto h-52">
 				<Image
 					src={image}
 					fill
