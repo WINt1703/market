@@ -35,11 +35,15 @@ const Rating: FC<RatingProps> = ({
 	}
 
 	return (
-		<div className="rating rating-half rating-sm">
+		<div
+			className={twJoin(
+				"rating rating-half rating-sm",
+				!grade && "opacity-20"
+			)}>
 			{Array.from({ length: stars * 2 }).map((s, i) => (
 				<input
 					key={i}
-					checked={grade > 0 && grade * 2 === i + 1}
+					checked={grade * 2 === i + 1}
 					type="radio"
 					className={twJoin(
 						"mask mask-star cursor-default",
