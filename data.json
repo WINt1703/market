@@ -1,0 +1,77 @@
+{
+	"products": [
+		{
+			"id": 1,
+			"name": "Calabrese Broccoli",
+			"description": "Discover the crisp texture and mild, sweet taste of our Calabrese Broccoli. Sourced from sun-drenched fields, these vibrant green florets are not only delicious but also a powerhouse of essential vitamins, minerals, and antioxidants. Whether lightly steamed or added to stir-fries and salads, Calabrese Broccoli is a versatile and healthy choice for every plate. Elevate your dining experience with this fresh and flavorful cruciferous vegetable – a delicious addition to a wholesome lifestyle.",
+			"image": "/calabrese-broccoli.png",
+			"price": 20,
+			"discount": 3,
+			"tag": "Vegan",
+			"rating": 3.5
+		},
+		{
+			"id": 2,
+			"name": "Fresh Banana Fruites",
+			"description": "Enjoy the natural sweetness of ripe, fresh bananas. Packed with essential vitamins and minerals, these bananas make for a healthy and delicious snack. Add them to your daily routine for a burst of energy and a satisfying taste of nature's goodness.",
+			"price": 13,
+			"discount": 5,
+			"tag": "Fresh",
+			"image": "/fresh-banana.png",
+			"rating": 4
+		},
+		{
+			"id": 3,
+			"name": "White Nuts",
+			"description": "A premium blend of assorted white nuts, delivering a delectable mix of flavors and textures. Perfect for snacking or enhancing your favorite dishes with a touch of wholesome crunchiness.",
+			"price": 7,
+			"tag": "Millets",
+			"image": "/white-nuts.png"
+		},
+		{
+			"id": 4,
+			"name": "Vegan Cherry Tomatoes",
+			"description": "Fresh and vibrant Vegan Cherry Tomatoes bursting with natural sweetness. These tomatoes are organically grown, free from animal-derived fertilizers or pesticides. Picked at peak ripeness, they add a burst of flavor to salads, sandwiches, or your favorite vegan dishes. Enjoy the wholesome goodness of these plump and juicy cherry tomatoes, perfect for a cruelty-free and delicious culinary experience.",
+			"price": 5.5,
+			"tag": "Vegan",
+			"image": "/vegan-cherry.png",
+			"rating": 2.5
+		},
+		{
+			"id": 5,
+			"name": "Vegan Cherry Tomatoes",
+			"description": "Fresh and vibrant Vegan Cherry Tomatoes bursting with natural sweetness. These tomatoes are organically grown, free from animal-derived fertilizers or pesticides. Picked at peak ripeness, they add a burst of flavor to salads, sandwiches, or your favorite vegan dishes. Enjoy the wholesome goodness of these plump and juicy cherry tomatoes, perfect for a cruelty-free and delicious culinary experience.",
+			"price": 5.5,
+			"tag": "Vegan",
+			"image": "/vegan-cherry.png",
+			"rating": 2.5
+		},
+		{
+			"id": 6,
+			"name": "Vegan Cherry Tomatoes",
+			"description": "Fresh and vibrant Vegan Cherry Tomatoes bursting with natural sweetness. These tomatoes are organically grown, free from animal-derived fertilizers or pesticides. Picked at peak ripeness, they add a burst of flavor to salads, sandwiches, or your favorite vegan dishes. Enjoy the wholesome goodness of these plump and juicy cherry tomatoes, perfect for a cruelty-free and delicious culinary experience.",
+			"price": 5.5,
+			"tag": "Vegan",
+			"image": "/vegan-cherry.png",
+			"rating": 2.5
+		},
+		{
+			"id": 7,
+			"name": "Vegan Cherry Tomatoes",
+			"description": "Fresh and vibrant Vegan Cherry Tomatoes bursting with natural sweetness. These tomatoes are organically grown, free from animal-derived fertilizers or pesticides. Picked at peak ripeness, they add a burst of flavor to salads, sandwiches, or your favorite vegan dishes. Enjoy the wholesome goodness of these plump and juicy cherry tomatoes, perfect for a cruelty-free and delicious culinary experience.",
+			"price": 5.5,
+			"tag": "Vegan",
+			"image": "/vegan-cherry.png",
+			"rating": 2.5
+		},
+		{
+			"id": 8,
+			"name": "Vegan Cherry Tomatoes",
+			"description": "Fresh and vibrant Vegan Cherry Tomatoes bursting with natural sweetness. These tomatoes are organically grown, free from animal-derived fertilizers or pesticides. Picked at peak ripeness, they add a burst of flavor to salads, sandwiches, or your favorite vegan dishes. Enjoy the wholesome goodness of these plump and juicy cherry tomatoes, perfect for a cruelty-free and delicious culinary experience.",
+			"price": 5.5,
+			"tag": "Vegan",
+			"image": "/vegan-cherry.png",
+			"rating": 2.5
+		}
+	]
+}
