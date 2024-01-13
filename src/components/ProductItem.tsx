@@ -5,8 +5,11 @@ import Typography from "./Typography"
 import Product from "@/types/Product"
 import Image from "next/image"
 import type { FC } from "react"
+import { twJoin } from "tailwind-merge"
 
-type ProductItemProps = Omit<Product, "description">
+type ProductItemProps = {
+	preview?: boolean
+} & Omit<Product, "description">
 
 const ProductItem: FC<ProductItemProps> = ({
 	id,
@@ -15,10 +18,15 @@ const ProductItem: FC<ProductItemProps> = ({
 	price,
 	tag,
 	discount,
-	rating
+	rating,
+	preview
 }) => {
 	return (
-		<div className="block min-h-[280px] min-w-[250px] space-y-3 rounded-3xl bg-zinc-100 p-3">
+		<div
+			className={twJoin(
+				"block min-h-[280px] min-w-[250px] space-y-3 rounded-3xl p-3",
+				preview ? "bg-white" : "bg-zinc-100"
+			)}>
 			<span className="badge badge-primary">{tag}</span>
 			<div className="relative mx-auto h-52">
 				<Image
