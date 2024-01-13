@@ -47,7 +47,7 @@ const Rating: FC<RatingProps> = ({
 					type="radio"
 					className={twJoin(
 						"mask mask-star",
-						`mask-half-${i % 2 ? "2" : "1"}`,
+						i % 2 ? "mask-half-2" : "mask-half-1",
 						color,
 						rest.disabled && "cursor-default"
 					)}
