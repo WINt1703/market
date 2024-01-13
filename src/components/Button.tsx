@@ -17,7 +17,7 @@ type ButtonTheme = {
 }
 
 const theme: ButtonTheme = {
-	base: "flex items-center font-bold ring-0 hover:opacity-95 py-3 px-6 rounded-xl active:outline outline-2",
+	base: "flex h-fit items-center font-bold ring-0 hover:opacity-95 py-3 px-6 rounded-xl active:outline outline-2",
 	color: {
 		primary: "bg-primary text-white outline-cyan-300",
 		secondary: "bg-secondary text-primary outline-amber-300",
