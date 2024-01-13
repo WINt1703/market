@@ -28,7 +28,7 @@ const Rating: FC<RatingProps> = ({
 	...rest
 }) => {
 	const [grade, setGrade] = useState(roundGrade(rawGrade ?? 0))
-
+	const [hover, setHover] = useState<number | undefined>()
 	const handler = (newGrade: number): void => {
 		if (onChange) onChange(newGrade)
 		setGrade(newGrade)
@@ -43,13 +43,16 @@ const Rating: FC<RatingProps> = ({
 			{Array.from({ length: stars * 2 }).map((s, i) => (
 				<input
 					key={i}
-					checked={grade * 2 === i + 1}
+					checked={grade * 2 === i + 1 || hover === i}
 					type="radio"
 					className={twJoin(
-						"mask mask-star cursor-default",
+						"mask mask-star",
 						`mask-half-${i % 2 ? "2" : "1"}`,
-						color
+						color,
+						rest.disabled && "cursor-default"
 					)}
+					onMouseEnter={() => setHover(i)}
+					onMouseLeave={() => setHover(undefined)}
 					onChange={() => handler((i + 1) / 2)}
 					{...rest}
 				/>
