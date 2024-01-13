@@ -6,6 +6,7 @@ type Variant = "title" | "description" | "section" | "theme"
 
 type TypographyProps = {
 	variant: Variant
+	component?: "span" | "p"
 } & DetailedHTMLProps<
 	HTMLAttributes<HTMLParagraphElement>,
 	HTMLParagraphElement
@@ -55,16 +56,17 @@ const getFontByVariant = (variant: Variant): FontStyle | undefined => {
 const Typography: FC<TypographyProps> = ({
 	variant,
 	children,
+	component: TypographyTag = "p",
 	className,
 	...rest
 }) => {
 	return (
-		<p
+		<TypographyTag
 			{...rest}
 			style={getFontByVariant(variant)}
 			className={twMerge(getStyleByVariant(variant), className)}>
 			{children}
-		</p>
+		</TypographyTag>
 	)
 }
 
