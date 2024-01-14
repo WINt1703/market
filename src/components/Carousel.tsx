@@ -10,6 +10,7 @@ type CarouselProps<T> = {
 	template: (data: T) => ReactElement | boolean
 	slideTime?: number
 	autoScroll?: boolean
+	className?: string
 }
 
 const Carousel = <T,>({
@@ -17,7 +18,8 @@ const Carousel = <T,>({
 	slideId,
 	template,
 	slideTime = 1000,
-	autoScroll
+	autoScroll,
+	className
 }: CarouselProps<T>): ReactElement => {
 	const carouselRef = useRef<HTMLDivElement>(null)
 	const slideRefs = useRef<Array<HTMLDivElement | null>>([])
@@ -48,7 +50,7 @@ const Carousel = <T,>({
 
 	return (
 		<div
-			className="space-y-5"
+			className={twJoin("space-y-5", className)}
 			onMouseOver={autoScroll ? stop : undefined}
 			onMouseOut={autoScroll ? start : undefined}>
 			<div ref={carouselRef} className="carousel w-full">
