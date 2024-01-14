@@ -33,7 +33,7 @@ const AboutUsSection: FC = () => {
 	return (
 		<section className="relative flex items-center bg-gray-100 py-40">
 			<Image
-				src="/about-us-home-preview.png"
+				src="/sections/home/about-us-home-preview.png"
 				width={700}
 				height={700}
 				className="justify-self-center"
@@ -51,12 +51,12 @@ const AboutUsSection: FC = () => {
 				</Typography>
 				<div className="my-8 space-y-8">
 					<FoodBenefits
-						image="/organic-foods-only-home-preview.svg"
+						image="/sections/home/organic-foods-only-home-preview.svg"
 						title="Organic Foods Only"
 						description="Simply dummy text of the printing and typesetting industry. Lorem Ipsum"
 					/>
 					<FoodBenefits
-						image="/quality-standards-home-preview.svg"
+						image="/sections/home/quality-standards-home-preview.svg"
 						title="Quality Standards"
 						description="Simply dummy text of the printing and typesetting industry. Lorem Ipsum"
 					/>

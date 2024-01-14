@@ -15,11 +15,11 @@ const config: Config = {
 				"news-letter":
 					"url('https://wint1703.sirv.com/market/news-letter.png')",
 				"natural-food":
-					"url('https://wint1703.sirv.com/market/natural-food-backround.png')",
+					"url('https://wint1703.sirv.com/market/sections/home/natural-food-backround.png')",
 				"fresh-fruits-offer":
-					"url('https://wint1703.sirv.com/market/offer-flesh-fruit.png')",
+					"url('https://wint1703.sirv.com/market/sections/home/offer-flesh-fruit.png')",
 				"vegetables-discount":
-					"url('https://wint1703.sirv.com/market/offer-discount-vegetable.png')"
+					"url('https://wint1703.sirv.com/market/sections/home/offer-discount-vegetable.png')"
 			},
 			colors: {
 				primary: {

@@ -4,7 +4,7 @@
 			"id": 1,
 			"name": "Calabrese Broccoli",
 			"description": "Discover the crisp texture and mild, sweet taste of our Calabrese Broccoli. Sourced from sun-drenched fields, these vibrant green florets are not only delicious but also a powerhouse of essential vitamins, minerals, and antioxidants. Whether lightly steamed or added to stir-fries and salads, Calabrese Broccoli is a versatile and healthy choice for every plate. Elevate your dining experience with this fresh and flavorful cruciferous vegetable – a delicious addition to a wholesome lifestyle.",
-			"image": "/calabrese-broccoli.png",
+			"image": "/product-list/calabrese-broccoli.png",
 			"price": 20,
 			"discount": 3,
 			"tag": "Vegan",
@@ -17,7 +17,7 @@
 			"price": 13,
 			"discount": 5,
 			"tag": "Fresh",
-			"image": "/fresh-banana.png",
+			"image": "/product-list/fresh-banana.png",
 			"rating": 4
 		},
 		{
@@ -26,7 +26,7 @@
 			"description": "A premium blend of assorted white nuts, delivering a delectable mix of flavors and textures. Perfect for snacking or enhancing your favorite dishes with a touch of wholesome crunchiness.",
 			"price": 7,
 			"tag": "Millets",
-			"image": "/white-nuts.png"
+			"image": "/product-list/white-nuts.png"
 		},
 		{
 			"id": 4,
@@ -34,7 +34,7 @@
 			"description": "Fresh and vibrant Vegan Cherry Tomatoes bursting with natural sweetness. These tomatoes are organically grown, free from animal-derived fertilizers or pesticides. Picked at peak ripeness, they add a burst of flavor to salads, sandwiches, or your favorite vegan dishes. Enjoy the wholesome goodness of these plump and juicy cherry tomatoes, perfect for a cruelty-free and delicious culinary experience.",
 			"price": 5.5,
 			"tag": "Vegan",
-			"image": "/vegan-cherry.png",
+			"image": "/product-list/vegan-cherry.png",
 			"rating": 2.5
 		},
 		{
@@ -43,7 +43,7 @@
 			"description": "Fresh and vibrant Vegan Cherry Tomatoes bursting with natural sweetness. These tomatoes are organically grown, free from animal-derived fertilizers or pesticides. Picked at peak ripeness, they add a burst of flavor to salads, sandwiches, or your favorite vegan dishes. Enjoy the wholesome goodness of these plump and juicy cherry tomatoes, perfect for a cruelty-free and delicious culinary experience.",
 			"price": 5.5,
 			"tag": "Vegan",
-			"image": "/vegan-cherry.png",
+			"image": "/product-list/vegan-cherry.png",
 			"rating": 2.5
 		},
 		{
@@ -52,7 +52,7 @@
 			"description": "Fresh and vibrant Vegan Cherry Tomatoes bursting with natural sweetness. These tomatoes are organically grown, free from animal-derived fertilizers or pesticides. Picked at peak ripeness, they add a burst of flavor to salads, sandwiches, or your favorite vegan dishes. Enjoy the wholesome goodness of these plump and juicy cherry tomatoes, perfect for a cruelty-free and delicious culinary experience.",
 			"price": 5.5,
 			"tag": "Vegan",
-			"image": "/vegan-cherry.png",
+			"image": "/product-list/vegan-cherry.png",
 			"rating": 2.5
 		},
 		{
@@ -61,7 +61,7 @@
 			"description": "Fresh and vibrant Vegan Cherry Tomatoes bursting with natural sweetness. These tomatoes are organically grown, free from animal-derived fertilizers or pesticides. Picked at peak ripeness, they add a burst of flavor to salads, sandwiches, or your favorite vegan dishes. Enjoy the wholesome goodness of these plump and juicy cherry tomatoes, perfect for a cruelty-free and delicious culinary experience.",
 			"price": 5.5,
 			"tag": "Vegan",
-			"image": "/vegan-cherry.png",
+			"image": "/product-list/vegan-cherry.png",
 			"rating": 2.5
 		},
 		{
@@ -70,7 +70,7 @@
 			"description": "Fresh and vibrant Vegan Cherry Tomatoes bursting with natural sweetness. These tomatoes are organically grown, free from animal-derived fertilizers or pesticides. Picked at peak ripeness, they add a burst of flavor to salads, sandwiches, or your favorite vegan dishes. Enjoy the wholesome goodness of these plump and juicy cherry tomatoes, perfect for a cruelty-free and delicious culinary experience.",
 			"price": 5.5,
 			"tag": "Vegan",
-			"image": "/vegan-cherry.png",
+			"image": "/product-list/vegan-cherry.png",
 			"rating": 2.5
 		}
 	]
