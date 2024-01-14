@@ -19,7 +19,8 @@
 					"prop": false,
 					"props": false,
 					"i": false,
-					"ref": false
+					"ref": false,
+					"refs": false
 				}
 			}
 		],
