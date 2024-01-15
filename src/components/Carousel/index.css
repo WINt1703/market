@@ -1,0 +1,23 @@
+.progress-slide {
+	position: relative;
+	overflow: hidden;
+	@apply bg-info;
+	@apply w-6;
+}
+
+.progress-slide::after {
+	content: "";
+	position: absolute;
+	animation: var(--slide-animation);
+	inset: 0;
+	width: 0;
+	animation-play-state: var(--animation-state);
+	@apply rounded-full;
+	@apply bg-gray-300;
+}
+
+@keyframes maxOff {
+	to {
+		width: 100%;
+	}
+}

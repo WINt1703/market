@@ -1,5 +1,6 @@
 "use client"
 
+import "./index.css"
 import { ReactElement, useEffect, useRef, useState } from "react"
 import { useInterval } from "react-timing-hooks"
 import { twJoin } from "tailwind-merge"
@@ -24,7 +25,7 @@ const Carousel = <T,>({
 	const carouselRef = useRef<HTMLDivElement>(null)
 	const slideRefs = useRef<Array<HTMLDivElement | null>>([])
 	const [slide, setSlide] = useState(0)
-	const { start, stop } = useInterval(() => {
+	const { isStopped, start, stop } = useInterval(() => {
 		scrollSlide(slide === slideRefs.current.length - 1 ? 0 : slide + 1)
 	}, slideTime)
 
@@ -42,6 +43,11 @@ const Carousel = <T,>({
 		}
 	}
 
+	const onSelectedSlide = (index: number): void => {
+		if (autoScroll) stop()
+		scrollSlide(index)
+	}
+
 	useEffect(() => {
 		if (slideRefs.current.length > 1 && autoScroll) {
 			start()
@@ -50,7 +56,7 @@ const Carousel = <T,>({
 
 	return (
 		<div
-			className={twJoin("space-y-5", className)}
+			className={twJoin("group space-y-5", className)}
 			onMouseOver={autoScroll ? stop : undefined}
 			onMouseOut={autoScroll ? start : undefined}>
 			<div ref={carouselRef} className="carousel w-full">
@@ -68,10 +74,17 @@ const Carousel = <T,>({
 				{data.map((item, index) => (
 					<div
 						key={index}
-						onClick={() => scrollSlide(index)}
+						style={
+							{
+								"--slide-animation": isStopped
+									? undefined
+									: `maxOff ${slideTime}ms ease-in alternate`
+							} as React.CSSProperties
+						}
+						onClick={() => onSelectedSlide(index)}
 						className={twJoin(
-							"h-3 w-3 rounded-full",
-							slide === index ? "bg-info" : "bg-gray-300"
+							"max-auto h-3 min-w-3 rounded-full",
+							slide === index ? "progress-slide" : "bg-gray-300"
 						)}
 					/>
 				))}
