@@ -73,5 +73,31 @@
 			"image": "/product-list/vegan-cherry.png",
 			"rating": 2.5
 		}
+	],
+	"home_team": [
+		{
+			"id": 1,
+			"name": "Stiv Taylor",
+			"position": "Consumer",
+			"rating": 4.5,
+			"description": "Simply dummy text of the printing and typesetting industry. Lorem Ipsum simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.",
+			"avatar": "/sections/home/worker-1.jpg"
+		},
+		{
+			"id": 2,
+			"name": "John Smith",
+			"position": "Manager",
+			"rating": 5,
+			"description": "Experienced manager with a proven track record of successfully leading teams and achieving business goals. Strong strategic thinker and effective communicator.",
+			"avatar": "/sections/home/worker-2.jpg"
+		},
+		{
+			"id": 3,
+			"name": "Emily Johnson",
+			"position": "Software Engineer",
+			"rating": 4.5,
+			"description": "Highly skilled software engineer with expertise in full-stack development. Proficient in multiple programming languages and dedicated to delivering high-quality, scalable solutions.",
+			"avatar": "/sections/home/worker-3.jpg"
+		}
 	]
 }

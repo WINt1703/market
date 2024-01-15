@@ -19,7 +19,9 @@ const config: Config = {
 				"fresh-fruits-offer":
 					"url('https://wint1703.sirv.com/market/sections/home/offer-flesh-fruit.png')",
 				"vegetables-discount":
-					"url('https://wint1703.sirv.com/market/sections/home/offer-discount-vegetable.png')"
+					"url('https://wint1703.sirv.com/market/sections/home/offer-discount-vegetable.png')",
+				testimonial:
+					"url('https://wint1703.sirv.com/market/sections/home/testimonial-background.png')"
 			},
 			colors: {
 				primary: {
