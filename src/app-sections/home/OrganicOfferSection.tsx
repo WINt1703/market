@@ -14,7 +14,9 @@ const OrganicOfferSection: FC = () => {
 						</Typography>
 						We Offer Organic For You
 					</Typography>
-					<Button variant="secondary">View All Product</Button>
+					<Button variant="secondary" className="self-end">
+						View All Product
+					</Button>
 				</div>
 				<ProductList preview countItems={4} />
 			</div>
