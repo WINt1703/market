@@ -1,4 +1,5 @@
 import AboutUsSection from "@/app-sections/home/AboutUsSection"
+import EcoFriendlySection from "@/app-sections/home/EcoFriendlySection"
 import NatureFoodSection from "@/app-sections/home/NatureFoodSection"
 import OfferSection from "@/app-sections/home/OffersSection"
 import OrganicOfferSection from "@/app-sections/home/OrganicOfferSection"
@@ -15,6 +16,7 @@ const Home: FC = () => {
 			<OutProductsSection />
 			<TestimonialSection />
 			<OrganicOfferSection />
+			<EcoFriendlySection />
 		</div>
 	)
 }
