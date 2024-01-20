@@ -21,7 +21,13 @@ const config: Config = {
 				"vegetables-discount":
 					"url('https://wint1703.sirv.com/market/sections/home/offer-discount-vegetable.png')",
 				testimonial:
-					"url('https://wint1703.sirv.com/market/sections/home/testimonial-background.png')"
+					"url('https://wint1703.sirv.com/market/sections/home/testimonial-background.png')",
+				"nuts-cookies":
+					"url('https://wint1703.sirv.com/market/sections/home/nuts-cookie.jpg')",
+				"organic-food":
+					"url('https://wint1703.sirv.com/market/sections/home/oranic-food.jpg')",
+				"organic-juice":
+					"url('https://wint1703.sirv.com/market/sections/home/organic-juice.png')"
 			},
 			colors: {
 				primary: {
