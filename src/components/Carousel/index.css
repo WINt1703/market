@@ -2,7 +2,7 @@
 	position: relative;
 	overflow: hidden;
 	@apply bg-gray-300;
-	width: 1.5rem;
+	@apply w-6;
 }
 
 .progress-slide::after {
