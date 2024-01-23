@@ -34,7 +34,7 @@ const getStyleByVariant = (variant: Variant): string => {
 		case "title":
 			return "text-primary font-semibold"
 		case "description":
-			return "text-gray-500 leading-7 text-sm"
+			return "text-gray-500 font-normal leading-7 text-sm"
 		case "section":
 			return "text-info text-2xl"
 		case "theme":
