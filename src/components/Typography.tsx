@@ -19,7 +19,7 @@ type FontStyle = {
 }
 
 const descriptionFont = Open_Sans({
-	weight: "400",
+	weight: ["300", "400", "500", "600", "700", "800"],
 	subsets: ["latin"]
 })
 
@@ -38,7 +38,7 @@ const getStyleByVariant = (variant: Variant): string => {
 		case "section":
 			return "text-info text-2xl"
 		case "theme":
-			return "text-primary font-extrabold text-5xl"
+			return "text-primary font-bold text-5xl"
 	}
 }
 

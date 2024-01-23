@@ -5,7 +5,7 @@ import Link from "next/link"
 import type { FC } from "react"
 
 const linkStyle =
-	"font-extrabold text-primary hover:text-primary-100 active:text-primary-300"
+	"font-bold text-primary hover:text-primary-100 active:text-primary-300"
 
 const Header: FC = () => {
 	return (
