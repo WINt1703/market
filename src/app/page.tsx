@@ -2,6 +2,7 @@ import AboutUsSection from "@/app-sections/home/AboutUsSection"
 import EcoFriendlySection from "@/app-sections/home/EcoFriendlySection"
 import GallerySection from "@/app-sections/home/GallerySection"
 import NatureFoodSection from "@/app-sections/home/NatureFoodSection"
+import NewsSection from "@/app-sections/home/NewsSection"
 import OfferSection from "@/app-sections/home/OffersSection"
 import OrganicOfferSection from "@/app-sections/home/OrganicOfferSection"
 import OutProductsSection from "@/app-sections/home/OurProductsSection"
@@ -19,6 +20,7 @@ const Home: FC = () => {
 			<OrganicOfferSection />
 			<EcoFriendlySection />
 			<GallerySection />
+			<NewsSection />
 		</div>
 	)
 }
