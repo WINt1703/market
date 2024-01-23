@@ -11,7 +11,7 @@ import { FC } from "react"
 
 const Home: FC = () => {
 	return (
-		<div>
+		<>
 			<NatureFoodSection />
 			<OfferSection />
 			<AboutUsSection />
@@ -21,7 +21,7 @@ const Home: FC = () => {
 			<EcoFriendlySection />
 			<GallerySection />
 			<NewsSection />
-		</div>
+		</>
 	)
 }
 
