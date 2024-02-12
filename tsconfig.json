@@ -23,7 +23,8 @@
 			"@/*": ["./src/*"],
 			"@/components/": ["../components/*"],
 			"@/app-sections": ["../app-sections/"],
-			"@/types": ["../types/"]
+			"@/types": ["../types/"],
+			"@/shopify": ["../shopify/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
