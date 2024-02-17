@@ -1,0 +1,26 @@
+fragment product on Product {
+	id
+	availableForSale
+	description
+	tags
+	title
+	totalInventory
+	featuredImage {
+		altText
+		url
+	}
+	compareAtPriceRange {
+		maxVariantPrice {
+			amount
+			currencyCode
+		}
+		minVariantPrice {
+			amount
+			currencyCode
+		}
+	}
+	seo {
+		title
+		description
+	}
+}

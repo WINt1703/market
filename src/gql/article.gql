@@ -1,0 +1,16 @@
+fragment article on Article {
+	id
+	authorV2 {
+		name
+	}
+	excerpt
+	image {
+		altText
+		url
+	}
+	contentHtml
+	seo {
+		description
+		title
+	}
+}
