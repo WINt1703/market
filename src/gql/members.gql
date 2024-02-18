@@ -1,0 +1,7 @@
+query members($first: Int) {
+	metaobjects(type: "member", first: $first) {
+		nodes {
+			...member
+		}
+	}
+}

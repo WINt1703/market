@@ -1,0 +1,18 @@
+fragment member on Metaobject {
+	id
+	type
+	member @client {
+		avatar
+		name
+		position
+		rating {
+			scaleMin
+			scaleMax
+			value
+		}
+	}
+	fields {
+		key
+		value
+	}
+}

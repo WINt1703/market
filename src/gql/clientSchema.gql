@@ -1,0 +1,17 @@
+type Metaobject {
+	member: Member
+}
+
+type Member {
+	name: String!
+	description: String!
+	avatar: String!
+	position: String!
+	rating: Rating!
+}
+
+type Rating {
+	scaleMax: String!
+	scaleMin: String!
+	value: String!
+}

@@ -35,12 +35,67 @@ export type Scalars = {
 	Boolean: { input: boolean; output: boolean }
 	Int: { input: number; output: number }
 	Float: { input: number; output: number }
+	/**
+	 * A string containing a hexadecimal representation of a color.
+	 *
+	 * For example, "#6A8D48".
+	 *
+	 */
 	Color: { input: any; output: any }
+	/**
+	 * Represents an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)-encoded date and time string.
+	 * For example, 3:50 pm on September 7, 2019 in the time zone of UTC (Coordinated Universal Time) is
+	 * represented as `"2019-09-07T15:50:00Z`".
+	 *
+	 */
 	DateTime: { input: any; output: any }
+	/**
+	 * A signed decimal number, which supports arbitrary precision and is serialized as a string.
+	 *
+	 * Example values: `"29.99"`, `"29.999"`.
+	 *
+	 */
 	Decimal: { input: any; output: any }
+	/**
+	 * A string containing HTML code. Refer to the [HTML spec](https://html.spec.whatwg.org/#elements-3) for a
+	 * complete list of HTML elements.
+	 *
+	 * Example value: `"<p>Grey cotton knit sweater.</p>"`
+	 *
+	 */
 	HTML: { input: any; output: any }
+	/**
+	 * A [JSON](https://www.json.org/json-en.html) object.
+	 *
+	 * Example value:
+	 * `{
+	 *   "product": {
+	 *     "id": "gid://shopify/Product/1346443542550",
+	 *     "title": "White T-shirt",
+	 *     "options": [{
+	 *       "name": "Size",
+	 *       "values": ["M", "L"]
+	 *     }]
+	 *   }
+	 * }`
+	 *
+	 */
 	JSON: { input: any; output: any }
+	/**
+	 * Represents an [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986) and
+	 * [RFC 3987](https://datatracker.ietf.org/doc/html/rfc3987)-compliant URI string.
+	 *
+	 * For example, `"https://johns-apparel.myshopify.com"` is a valid URL. It includes a scheme (`https`) and a host
+	 * (`johns-apparel.myshopify.com`).
+	 *
+	 */
 	URL: { input: any; output: any }
+	/**
+	 * An unsigned 64-bit integer. Represents whole numeric values between 0 and 2^64 - 1 encoded as a string of base-10 digits.
+	 *
+	 * Example value: `"50"`.
+	 *
+	 */
 	UnsignedInt64: { input: any; output: any }
 }
 
@@ -4767,6 +4822,15 @@ export enum MediaPresentationFormat {
 	ModelViewer = "MODEL_VIEWER"
 }
 
+export type Member = {
+	__typename?: "Member"
+	avatar: Scalars["String"]["output"]
+	description: Scalars["String"]["output"]
+	name: Scalars["String"]["output"]
+	position: Scalars["String"]["output"]
+	rating: Rating
+}
+
 /**
  * A [navigation menu](https://help.shopify.com/manual/online-store/menus-and-links) representing a hierarchy
  * of hyperlinks (items).
@@ -4815,6 +4879,7 @@ export type MenuItemResource =
 	| Article
 	| Blog
 	| Collection
+	| Metaobject
 	| Page
 	| Product
 	| ShopPolicy
@@ -4835,6 +4900,8 @@ export enum MenuItemType {
 	Frontpage = "FRONTPAGE",
 	/** An http link. */
 	Http = "HTTP",
+	/** A metaobject page link. */
+	Metaobject = "METAOBJECT",
 	/** A page link. */
 	Page = "PAGE",
 	/** A product link. */
@@ -5039,6 +5106,7 @@ export type Metaobject = Node &
 		handle: Scalars["String"]["output"]
 		/** A globally-unique ID. */
 		id: Scalars["ID"]["output"]
+		member?: Maybe<Member>
 		/** The URL used for viewing the metaobject on the shop's Online Store. Returns `null` if the metaobject definition doesn't have the `online_store` capability. */
 		onlineStoreUrl?: Maybe<Scalars["URL"]["output"]>
 		/**
@@ -6352,6 +6420,8 @@ export type ProductSellingPlanGroupsArgs = {
  *
  */
 export type ProductVariantBySelectedOptionsArgs = {
+	caseInsensitiveMatch?: InputMaybe<Scalars["Boolean"]["input"]>
+	ignoreUnknownOptions?: InputMaybe<Scalars["Boolean"]["input"]>
 	selectedOptions: Array<SelectedOptionInput>
 }
 
@@ -6590,6 +6660,8 @@ export type ProductVariant = HasMetafields &
 		sku?: Maybe<Scalars["String"]["output"]>
 		/** The in-store pickup availability of this variant by location. */
 		storeAvailability: StoreAvailabilityConnection
+		/** Whether tax is charged when the product variant is sold. */
+		taxable: Scalars["Boolean"]["output"]
 		/** The product variant’s title. */
 		title: Scalars["String"]["output"]
 		/** The unit price value for the variant based on the variant's measurement. */
@@ -7006,6 +7078,13 @@ export type QueryRootUrlRedirectsArgs = {
 	last?: InputMaybe<Scalars["Int"]["input"]>
 	query?: InputMaybe<Scalars["String"]["input"]>
 	reverse?: InputMaybe<Scalars["Boolean"]["input"]>
+}
+
+export type Rating = {
+	__typename?: "Rating"
+	scaleMax: Scalars["String"]["output"]
+	scaleMin: Scalars["String"]["output"]
+	value: Scalars["String"]["output"]
 }
 
 /** SEO information. */
@@ -7989,6 +8068,62 @@ export type ArticlesQuery = {
 				description?: string | null
 				title?: string | null
 			} | null
+		}>
+	}
+}
+
+export type MemberFragment = {
+	__typename?: "Metaobject"
+	id: string
+	type: string
+	member?: {
+		__typename?: "Member"
+		avatar: string
+		name: string
+		position: string
+		rating: {
+			__typename?: "Rating"
+			scaleMin: string
+			scaleMax: string
+			value: string
+		}
+	} | null
+	fields: Array<{
+		__typename?: "MetaobjectField"
+		key: string
+		value?: string | null
+	}>
+}
+
+export type MembersQueryVariables = Exact<{
+	first?: InputMaybe<Scalars["Int"]["input"]>
+}>
+
+export type MembersQuery = {
+	__typename?: "QueryRoot"
+	metaobjects: {
+		__typename?: "MetaobjectConnection"
+		nodes: Array<{
+			__typename?: "Metaobject"
+			id: string
+			type: string
+			member?: {
+				__typename?: "Member"
+				avatar: string
+				name: string
+				position: string
+				rating: {
+					__typename?: "Rating"
+					scaleMin: string
+					scaleMax: string
+					value: string
+				}
+			} | null
+			fields: Array<{
+				__typename?: "MetaobjectField"
+				key: string
+				value?: string | null
+			}>
 		}>
 	}
 }
@@ -9980,6 +10115,21 @@ export type MediaPresentationFieldPolicy = {
 	asJson?: FieldPolicy<any> | FieldReadFunction<any>
 	id?: FieldPolicy<any> | FieldReadFunction<any>
 }
+export type MemberKeySpecifier = (
+	| "avatar"
+	| "description"
+	| "name"
+	| "position"
+	| "rating"
+	| MemberKeySpecifier
+)[]
+export type MemberFieldPolicy = {
+	avatar?: FieldPolicy<any> | FieldReadFunction<any>
+	description?: FieldPolicy<any> | FieldReadFunction<any>
+	name?: FieldPolicy<any> | FieldReadFunction<any>
+	position?: FieldPolicy<any> | FieldReadFunction<any>
+	rating?: FieldPolicy<any> | FieldReadFunction<any>
+}
 export type MenuKeySpecifier = (
 	| "handle"
 	| "id"
@@ -10092,6 +10242,7 @@ export type MetaobjectKeySpecifier = (
 	| "fields"
 	| "handle"
 	| "id"
+	| "member"
 	| "onlineStoreUrl"
 	| "seo"
 	| "type"
@@ -10103,6 +10254,7 @@ export type MetaobjectFieldPolicy = {
 	fields?: FieldPolicy<any> | FieldReadFunction<any>
 	handle?: FieldPolicy<any> | FieldReadFunction<any>
 	id?: FieldPolicy<any> | FieldReadFunction<any>
+	member?: FieldPolicy<any> | FieldReadFunction<any>
 	onlineStoreUrl?: FieldPolicy<any> | FieldReadFunction<any>
 	seo?: FieldPolicy<any> | FieldReadFunction<any>
 	type?: FieldPolicy<any> | FieldReadFunction<any>
@@ -10705,6 +10857,7 @@ export type ProductVariantKeySpecifier = (
 	| "sellingPlanAllocations"
 	| "sku"
 	| "storeAvailability"
+	| "taxable"
 	| "title"
 	| "unitPrice"
 	| "unitPriceMeasurement"
@@ -10731,6 +10884,7 @@ export type ProductVariantFieldPolicy = {
 	sellingPlanAllocations?: FieldPolicy<any> | FieldReadFunction<any>
 	sku?: FieldPolicy<any> | FieldReadFunction<any>
 	storeAvailability?: FieldPolicy<any> | FieldReadFunction<any>
+	taxable?: FieldPolicy<any> | FieldReadFunction<any>
 	title?: FieldPolicy<any> | FieldReadFunction<any>
 	unitPrice?: FieldPolicy<any> | FieldReadFunction<any>
 	unitPriceMeasurement?: FieldPolicy<any> | FieldReadFunction<any>
@@ -10825,6 +10979,17 @@ export type QueryRootFieldPolicy = {
 	search?: FieldPolicy<any> | FieldReadFunction<any>
 	shop?: FieldPolicy<any> | FieldReadFunction<any>
 	urlRedirects?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type RatingKeySpecifier = (
+	| "scaleMax"
+	| "scaleMin"
+	| "value"
+	| RatingKeySpecifier
+)[]
+export type RatingFieldPolicy = {
+	scaleMax?: FieldPolicy<any> | FieldReadFunction<any>
+	scaleMin?: FieldPolicy<any> | FieldReadFunction<any>
+	value?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type SEOKeySpecifier = ("description" | "title" | SEOKeySpecifier)[]
 export type SEOFieldPolicy = {
@@ -12407,6 +12572,13 @@ export type StrictTypedTypePolicies = {
 			| (() => undefined | MediaPresentationKeySpecifier)
 		fields?: MediaPresentationFieldPolicy
 	}
+	Member?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?:
+			| false
+			| MemberKeySpecifier
+			| (() => undefined | MemberKeySpecifier)
+		fields?: MemberFieldPolicy
+	}
 	Menu?: Omit<TypePolicy, "fields" | "keyFields"> & {
 		keyFields?: false | MenuKeySpecifier | (() => undefined | MenuKeySpecifier)
 		fields?: MenuFieldPolicy
@@ -12684,6 +12856,13 @@ export type StrictTypedTypePolicies = {
 			| QueryRootKeySpecifier
 			| (() => undefined | QueryRootKeySpecifier)
 		fields?: QueryRootFieldPolicy
+	}
+	Rating?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?:
+			| false
+			| RatingKeySpecifier
+			| (() => undefined | RatingKeySpecifier)
+		fields?: RatingFieldPolicy
 	}
 	SEO?: Omit<TypePolicy, "fields" | "keyFields"> & {
 		keyFields?: false | SEOKeySpecifier | (() => undefined | SEOKeySpecifier)
@@ -13040,6 +13219,26 @@ export const ArticleFragmentDoc = gql`
 		}
 	}
 `
+export const MemberFragmentDoc = gql`
+	fragment member on Metaobject {
+		id
+		type
+		member @client {
+			avatar
+			name
+			position
+			rating {
+				scaleMin
+				scaleMax
+				value
+			}
+		}
+		fields {
+			key
+			value
+		}
+	}
+`
 export const ProductFragmentDoc = gql`
 	fragment product on Product {
 		id
@@ -13138,6 +13337,72 @@ export type ArticlesSuspenseQueryHookResult = ReturnType<
 export type ArticlesQueryResult = Apollo.QueryResult<
 	ArticlesQuery,
 	ArticlesQueryVariables
+>
+export const MembersDocument = gql`
+	query members($first: Int) {
+		metaobjects(type: "member", first: $first) {
+			nodes {
+				...member
+			}
+		}
+	}
+	${MemberFragmentDoc}
+`
+
+/**
+ * __useMembersQuery__
+ *
+ * To run a query within a React component, call `useMembersQuery` and pass it any options that fit your needs.
+ * When your component renders, `useMembersQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useMembersQuery({
+ *   variables: {
+ *      first: // value for 'first'
+ *   },
+ * });
+ */
+export function useMembersQuery(
+	baseOptions?: Apollo.QueryHookOptions<MembersQuery, MembersQueryVariables>
+) {
+	const options = { ...defaultOptions, ...baseOptions }
+	return Apollo.useQuery<MembersQuery, MembersQueryVariables>(
+		MembersDocument,
+		options
+	)
+}
+export function useMembersLazyQuery(
+	baseOptions?: Apollo.LazyQueryHookOptions<MembersQuery, MembersQueryVariables>
+) {
+	const options = { ...defaultOptions, ...baseOptions }
+	return Apollo.useLazyQuery<MembersQuery, MembersQueryVariables>(
+		MembersDocument,
+		options
+	)
+}
+export function useMembersSuspenseQuery(
+	baseOptions?: Apollo.SuspenseQueryHookOptions<
+		MembersQuery,
+		MembersQueryVariables
+	>
+) {
+	const options = { ...defaultOptions, ...baseOptions }
+	return Apollo.useSuspenseQuery<MembersQuery, MembersQueryVariables>(
+		MembersDocument,
+		options
+	)
+}
+export type MembersQueryHookResult = ReturnType<typeof useMembersQuery>
+export type MembersLazyQueryHookResult = ReturnType<typeof useMembersLazyQuery>
+export type MembersSuspenseQueryHookResult = ReturnType<
+	typeof useMembersSuspenseQuery
+>
+export type MembersQueryResult = Apollo.QueryResult<
+	MembersQuery,
+	MembersQueryVariables
 >
 export const ProductsDocument = gql`
 	query products($first: Int) {

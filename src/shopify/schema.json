@@ -17629,6 +17629,77 @@
 			},
 			{
 				"kind": "OBJECT",
+				"name": "Member",
+				"description": null,
+				"fields": [
+					{
+						"name": "avatar",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "description",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "name",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "position",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "rating",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": { "kind": "OBJECT", "name": "Rating", "ofType": null }
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
 				"name": "Menu",
 				"description": "A [navigation menu](https://help.shopify.com/manual/online-store/menus-and-links) representing a hierarchy\nof hyperlinks (items).\n",
 				"fields": [
@@ -17849,6 +17920,7 @@
 					{ "kind": "OBJECT", "name": "Article", "ofType": null },
 					{ "kind": "OBJECT", "name": "Blog", "ofType": null },
 					{ "kind": "OBJECT", "name": "Collection", "ofType": null },
+					{ "kind": "OBJECT", "name": "Metaobject", "ofType": null },
 					{ "kind": "OBJECT", "name": "Page", "ofType": null },
 					{ "kind": "OBJECT", "name": "Product", "ofType": null },
 					{ "kind": "OBJECT", "name": "ShopPolicy", "ofType": null }
@@ -17901,6 +17973,12 @@
 					{
 						"name": "HTTP",
 						"description": "An http link.",
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "METAOBJECT",
+						"description": "A metaobject page link.",
 						"isDeprecated": false,
 						"deprecationReason": null
 					},
@@ -18599,6 +18677,14 @@
 							"name": null,
 							"ofType": { "kind": "SCALAR", "name": "ID", "ofType": null }
 						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "member",
+						"description": null,
+						"args": [],
+						"type": { "kind": "OBJECT", "name": "Member", "ofType": null },
 						"isDeprecated": false,
 						"deprecationReason": null
 					},
@@ -23884,6 +23970,22 @@
 						"description": "Find a product’s variant based on its selected options.\nThis is useful for converting a user’s selection of product options into a single matching variant.\nIf there is not a variant for the selected options, `null` will be returned.\n",
 						"args": [
 							{
+								"name": "caseInsensitiveMatch",
+								"description": "Whether to perform case insensitive match on option names and values.",
+								"type": { "kind": "SCALAR", "name": "Boolean", "ofType": null },
+								"defaultValue": "false",
+								"isDeprecated": false,
+								"deprecationReason": null
+							},
+							{
+								"name": "ignoreUnknownOptions",
+								"description": "Whether to ignore unknown product options.",
+								"type": { "kind": "SCALAR", "name": "Boolean", "ofType": null },
+								"defaultValue": "false",
+								"isDeprecated": false,
+								"deprecationReason": null
+							},
+							{
 								"name": "selectedOptions",
 								"description": "The input fields used for a selected option.\n\nThe input must not contain more than `250` values.",
 								"type": {
@@ -24899,6 +25001,18 @@
 								"name": "StoreAvailabilityConnection",
 								"ofType": null
 							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "taxable",
+						"description": "Whether tax is charged when the product variant is sold.",
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": { "kind": "SCALAR", "name": "Boolean", "ofType": null }
 						},
 						"isDeprecated": false,
 						"deprecationReason": null
@@ -26549,6 +26663,53 @@
 								"name": "UrlRedirectConnection",
 								"ofType": null
 							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "Rating",
+				"description": null,
+				"fields": [
+					{
+						"name": "scaleMax",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "scaleMin",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "value",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
 						},
 						"isDeprecated": false,
 						"deprecationReason": null
@@ -31325,7 +31486,7 @@
 				"args": [
 					{
 						"name": "reason",
-						"description": "Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted in [Markdown](https://daringfireball.net/projects/markdown/).",
+						"description": "Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted using the Markdown syntax, as specified by [CommonMark](https://commonmark.org/).",
 						"type": { "kind": "SCALAR", "name": "String", "ofType": null },
 						"defaultValue": "\"No longer supported\"",
 						"isDeprecated": false,
