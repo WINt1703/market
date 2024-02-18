@@ -3,15 +3,15 @@ type Metaobject {
 }
 
 type Member {
-	name: String!
-	description: String!
-	avatar: String!
-	position: String!
-	rating: Rating!
+	name: String
+	description: String
+	avatar: String
+	position: String
+	rating: Rating
 }
 
 type Rating {
-	scaleMax: String!
-	scaleMin: String!
+	scale_min: String!
+	scale_max: String!
 	value: String!
 }

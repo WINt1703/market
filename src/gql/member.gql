@@ -1,13 +1,12 @@
 fragment member on Metaobject {
 	id
-	type
 	member @client {
 		avatar
 		name
 		position
 		rating {
-			scaleMin
-			scaleMax
+			scale_min
+			scale_max
 			value
 		}
 	}

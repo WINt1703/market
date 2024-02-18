@@ -17636,11 +17636,7 @@
 						"name": "avatar",
 						"description": null,
 						"args": [],
-						"type": {
-							"kind": "NON_NULL",
-							"name": null,
-							"ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
-						},
+						"type": { "kind": "SCALAR", "name": "String", "ofType": null },
 						"isDeprecated": false,
 						"deprecationReason": null
 					},
@@ -17648,11 +17644,7 @@
 						"name": "description",
 						"description": null,
 						"args": [],
-						"type": {
-							"kind": "NON_NULL",
-							"name": null,
-							"ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
-						},
+						"type": { "kind": "SCALAR", "name": "String", "ofType": null },
 						"isDeprecated": false,
 						"deprecationReason": null
 					},
@@ -17660,11 +17652,7 @@
 						"name": "name",
 						"description": null,
 						"args": [],
-						"type": {
-							"kind": "NON_NULL",
-							"name": null,
-							"ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
-						},
+						"type": { "kind": "SCALAR", "name": "String", "ofType": null },
 						"isDeprecated": false,
 						"deprecationReason": null
 					},
@@ -17672,11 +17660,7 @@
 						"name": "position",
 						"description": null,
 						"args": [],
-						"type": {
-							"kind": "NON_NULL",
-							"name": null,
-							"ofType": { "kind": "SCALAR", "name": "String", "ofType": null }
-						},
+						"type": { "kind": "SCALAR", "name": "String", "ofType": null },
 						"isDeprecated": false,
 						"deprecationReason": null
 					},
@@ -17684,11 +17668,7 @@
 						"name": "rating",
 						"description": null,
 						"args": [],
-						"type": {
-							"kind": "NON_NULL",
-							"name": null,
-							"ofType": { "kind": "OBJECT", "name": "Rating", "ofType": null }
-						},
+						"type": { "kind": "OBJECT", "name": "Rating", "ofType": null },
 						"isDeprecated": false,
 						"deprecationReason": null
 					}
@@ -26679,7 +26659,7 @@
 				"description": null,
 				"fields": [
 					{
-						"name": "scaleMax",
+						"name": "scale_max",
 						"description": null,
 						"args": [],
 						"type": {
@@ -26691,7 +26671,7 @@
 						"deprecationReason": null
 					},
 					{
-						"name": "scaleMin",
+						"name": "scale_min",
 						"description": null,
 						"args": [],
 						"type": {

@@ -4824,11 +4824,11 @@ export enum MediaPresentationFormat {
 
 export type Member = {
 	__typename?: "Member"
-	avatar: Scalars["String"]["output"]
-	description: Scalars["String"]["output"]
-	name: Scalars["String"]["output"]
-	position: Scalars["String"]["output"]
-	rating: Rating
+	avatar?: Maybe<Scalars["String"]["output"]>
+	description?: Maybe<Scalars["String"]["output"]>
+	name?: Maybe<Scalars["String"]["output"]>
+	position?: Maybe<Scalars["String"]["output"]>
+	rating?: Maybe<Rating>
 }
 
 /**
@@ -7082,8 +7082,8 @@ export type QueryRootUrlRedirectsArgs = {
 
 export type Rating = {
 	__typename?: "Rating"
-	scaleMax: Scalars["String"]["output"]
-	scaleMin: Scalars["String"]["output"]
+	scale_max: Scalars["String"]["output"]
+	scale_min: Scalars["String"]["output"]
 	value: Scalars["String"]["output"]
 }
 
@@ -8075,18 +8075,17 @@ export type ArticlesQuery = {
 export type MemberFragment = {
 	__typename?: "Metaobject"
 	id: string
-	type: string
 	member?: {
 		__typename?: "Member"
-		avatar: string
-		name: string
-		position: string
-		rating: {
+		avatar?: string | null
+		name?: string | null
+		position?: string | null
+		rating?: {
 			__typename?: "Rating"
-			scaleMin: string
-			scaleMax: string
+			scale_min: string
+			scale_max: string
 			value: string
-		}
+		} | null
 	} | null
 	fields: Array<{
 		__typename?: "MetaobjectField"
@@ -8106,18 +8105,17 @@ export type MembersQuery = {
 		nodes: Array<{
 			__typename?: "Metaobject"
 			id: string
-			type: string
 			member?: {
 				__typename?: "Member"
-				avatar: string
-				name: string
-				position: string
-				rating: {
+				avatar?: string | null
+				name?: string | null
+				position?: string | null
+				rating?: {
 					__typename?: "Rating"
-					scaleMin: string
-					scaleMax: string
+					scale_min: string
+					scale_max: string
 					value: string
-				}
+				} | null
 			} | null
 			fields: Array<{
 				__typename?: "MetaobjectField"
@@ -10981,14 +10979,14 @@ export type QueryRootFieldPolicy = {
 	urlRedirects?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type RatingKeySpecifier = (
-	| "scaleMax"
-	| "scaleMin"
+	| "scale_max"
+	| "scale_min"
 	| "value"
 	| RatingKeySpecifier
 )[]
 export type RatingFieldPolicy = {
-	scaleMax?: FieldPolicy<any> | FieldReadFunction<any>
-	scaleMin?: FieldPolicy<any> | FieldReadFunction<any>
+	scale_max?: FieldPolicy<any> | FieldReadFunction<any>
+	scale_min?: FieldPolicy<any> | FieldReadFunction<any>
 	value?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type SEOKeySpecifier = ("description" | "title" | SEOKeySpecifier)[]
@@ -13222,14 +13220,13 @@ export const ArticleFragmentDoc = gql`
 export const MemberFragmentDoc = gql`
 	fragment member on Metaobject {
 		id
-		type
 		member @client {
 			avatar
 			name
 			position
 			rating {
-				scaleMin
-				scaleMax
+				scale_min
+				scale_max
 				value
 			}
 		}
