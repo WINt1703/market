@@ -8146,7 +8146,10 @@ export type ProductFragment = {
 			amount: any
 			currencyCode: CurrencyCode
 		}
-		minVariantPrice: {
+	}
+	priceRange: {
+		__typename?: "ProductPriceRange"
+		maxVariantPrice: {
 			__typename?: "MoneyV2"
 			amount: any
 			currencyCode: CurrencyCode
@@ -8187,7 +8190,10 @@ export type ProductsQuery = {
 					amount: any
 					currencyCode: CurrencyCode
 				}
-				minVariantPrice: {
+			}
+			priceRange: {
+				__typename?: "ProductPriceRange"
+				maxVariantPrice: {
 					__typename?: "MoneyV2"
 					amount: any
 					currencyCode: CurrencyCode
@@ -13253,7 +13259,9 @@ export const ProductFragmentDoc = gql`
 				amount
 				currencyCode
 			}
-			minVariantPrice {
+		}
+		priceRange {
+			maxVariantPrice {
 				amount
 				currencyCode
 			}

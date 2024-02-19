@@ -1,9 +1,9 @@
 "use client"
 
-import data from "../../data.json"
 import Button from "./Button"
 import ProductItem from "@/components/ProductItem"
-import { FC, useState } from "react"
+import { useProductsQuery } from "@/shopify/generated"
+import { FC } from "react"
 import { twJoin } from "tailwind-merge"
 
 type ProductListProps = {
@@ -17,15 +17,26 @@ const ProductList: FC<ProductListProps> = ({
 	className,
 	preview
 }) => {
-	const [products] = useState(data.products.slice(0, countItems))
+	const { data } = useProductsQuery({
+		variables: {
+			first: countItems
+		}
+	})
 
 	return (
 		<div className={twJoin("space-y-16", className)}>
-			<div className="grid grid-cols-[repeat(4,250px)] place-content-center gap-4">
-				{products.map((p) => (
-					<ProductItem key={p.id} preview={preview} {...p} />
-				))}
-			</div>
+			{data?.products ? (
+				<div className="grid grid-cols-[repeat(4,250px)] place-content-center gap-4">
+					{data.products.nodes.map(
+						// eslint-disable-next-line @typescript-eslint/no-unused-vars
+						({ __typename, seo, description, ...rest }) => (
+							<ProductItem key={rest.id} preview={preview} {...rest} />
+						)
+					)}
+				</div>
+			) : (
+				<span>Not found products</span>
+			)}
 			{!preview && <Button className="mx-auto">Load More</Button>}
 		</div>
 	)

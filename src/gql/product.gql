@@ -14,7 +14,9 @@ fragment product on Product {
 			amount
 			currencyCode
 		}
-		minVariantPrice {
+	}
+	priceRange {
+		maxVariantPrice {
 			amount
 			currencyCode
 		}
