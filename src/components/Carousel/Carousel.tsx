@@ -8,7 +8,7 @@ import { twJoin } from "tailwind-merge"
 type CarouselProps<T> = {
 	data: Array<T>
 	slideId: string
-	template: (data: T) => ReactElement
+	template: (data: T) => ReactElement | undefined | null
 	slideTime?: number
 	autoScroll?: boolean
 	className?: string
