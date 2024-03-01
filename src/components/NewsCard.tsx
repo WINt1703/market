@@ -2,48 +2,42 @@
 
 import Button from "./Button"
 import Typography from "./Typography"
-import News from "@/types/News"
+import { ArticleFragment } from "@/shopify/generated"
 import Image from "next/image"
-import { FC, useRef } from "react"
+import { FC } from "react"
 import { FaUser } from "react-icons/fa"
 
-type NewsCard = News
+type NewsCardProps = Omit<ArticleFragment, "__typename" | "seo" | "contentHtml">
 
-const NewsCard: FC<NewsCard> = ({
-	author,
-	background,
-	date,
-	description,
-	id,
-	title
+const NewsCard: FC<NewsCardProps> = ({
+	authorV2,
+	publishedAt,
+	title,
+	excerpt,
+	image
 }) => {
-	const newsDate = useRef(
-		((): string => {
-			const parsedDate = new Date(date)
-			return parsedDate.toLocaleString("en-GB", {
-				day: "2-digit",
-				month: "short"
-			})
-		})()
-	)
+	const newsDate = new Date(publishedAt).toLocaleString("en-GB", {
+		day: "2-digit",
+		month: "short"
+	})
 
 	return (
 		<div className="relative h-[400px] w-[450px]">
 			<Image
 				className="!h-[90%] rounded-xl bg-cover"
 				fill
-				alt={title}
-				src={background}
+				alt={image?.altText || ""}
+				src={image?.url}
 			/>
 			<Typography
 				variant="title"
 				className="absolute left-4 top-4 w-12 rounded-full bg-white py-1 text-center leading-5">
-				{newsDate.current}
+				{newsDate}
 			</Typography>
 			<div className="absolute inset-x-6 bottom-0 rounded-xl bg-white px-8 py-10 shadow-lg">
 				<span className="flex items-center gap-x-2 text-sm font-light">
 					<FaUser size={18} className="text-secondary" />
-					By {author}
+					By {authorV2?.name}
 				</span>
 				<Typography variant="title" className="text-xl">
 					{title}
@@ -52,7 +46,7 @@ const NewsCard: FC<NewsCard> = ({
 						variant="description"
 						className="line-clamp-2"
 						component="span">
-						{description}
+						{excerpt}
 					</Typography>
 				</Typography>
 

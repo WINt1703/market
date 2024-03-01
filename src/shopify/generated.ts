@@ -8038,6 +8038,8 @@ export type ArticleFragment = {
 	__typename?: "Article"
 	id: string
 	excerpt?: string | null
+	title: string
+	publishedAt: any
 	contentHtml: any
 	authorV2?: { __typename?: "ArticleAuthor"; name: string } | null
 	image?: { __typename?: "Image"; altText?: string | null; url: any } | null
@@ -8060,6 +8062,8 @@ export type ArticlesQuery = {
 			__typename?: "Article"
 			id: string
 			excerpt?: string | null
+			title: string
+			publishedAt: any
 			contentHtml: any
 			authorV2?: { __typename?: "ArticleAuthor"; name: string } | null
 			image?: { __typename?: "Image"; altText?: string | null; url: any } | null
@@ -13244,6 +13248,8 @@ export const ArticleFragmentDoc = gql`
 			altText
 			url
 		}
+		title
+		publishedAt
 		contentHtml
 		seo {
 			description

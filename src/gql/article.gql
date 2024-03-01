@@ -8,6 +8,8 @@ fragment article on Article {
 		altText
 		url
 	}
+	title
+	publishedAt
 	contentHtml
 	seo {
 		description

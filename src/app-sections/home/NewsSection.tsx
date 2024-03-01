@@ -1,10 +1,17 @@
-import data from "../../../data.json"
+"use client"
+
 import Button from "@/components/Button"
 import NewsCard from "@/components/NewsCard"
 import Typography from "@/components/Typography"
+import { useArticlesQuery } from "@/shopify/generated"
 import { FC } from "react"
 
 const NewsSection: FC = () => {
+	const { data } = useArticlesQuery({
+		variables: {
+			first: 2
+		}
+	})
 	return (
 		<section className="mx-auto w-fit space-y-5 py-32">
 			<div className="flex items-end justify-between	">
@@ -19,8 +26,12 @@ const NewsSection: FC = () => {
 				<Button variant="outline">More News</Button>
 			</div>
 			<div className="flex justify-center gap-5">
-				<NewsCard {...data.news[0]} />
-				<NewsCard {...data.news[1]} />
+				{data?.articles.nodes.map(
+					// eslint-disable-next-line @typescript-eslint/no-unused-vars
+					({ contentHtml, __typename, seo, ...rest }) => (
+						<NewsCard key={rest.id} {...rest} />
+					)
+				)}
 			</div>
 		</section>
 	)
