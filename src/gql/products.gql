@@ -1,4 +1,4 @@
-query products($first: Int) {
+query products($first: Int!) {
 	products(first: $first) {
 		nodes {
 			...product

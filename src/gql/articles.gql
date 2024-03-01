@@ -1,4 +1,4 @@
-query articles($first: Int) {
+query articles($first: Int!) {
 	articles(first: $first) {
 		nodes {
 			...article
