@@ -1,4 +1,4 @@
-import { Member, Metaobject } from "@/shopify/generated"
+import { MediaImage, Member, Metaobject } from "@/shopify/generated"
 import { ApolloClient, InMemoryCache } from "@apollo/client"
 
 const shopify = new ApolloClient({
@@ -16,7 +16,9 @@ const shopify = new ApolloClient({
 					member(_, { readField }): Member {
 						const fields = readField<Metaobject["fields"]>("fields")
 						const member: Member = {
-							avatar: fields?.find((f) => f.key === "avatar")?.value,
+							avatar: (
+								fields?.find((f) => f.key === "avatar")?.reference as MediaImage
+							).image?.url,
 							description: fields?.find((f) => f.key === "description")?.value,
 							name: fields?.find((f) => f.key === "name")?.value,
 							position: fields?.find((f) => f.key === "position")?.value,

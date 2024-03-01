@@ -3,6 +3,7 @@ fragment member on Metaobject {
 	member @client {
 		avatar
 		name
+		description
 		position
 		rating {
 			scale_min
@@ -11,6 +12,13 @@ fragment member on Metaobject {
 		}
 	}
 	fields {
+		reference {
+			... on MediaImage {
+				image {
+					url
+				}
+			}
+		}
 		key
 		value
 	}
