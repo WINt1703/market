@@ -8049,7 +8049,7 @@ export type ArticleFragment = {
 }
 
 export type ArticlesQueryVariables = Exact<{
-	first?: InputMaybe<Scalars["Int"]["input"]>
+	first: Scalars["Int"]["input"]
 }>
 
 export type ArticlesQuery = {
@@ -8079,6 +8079,7 @@ export type MemberFragment = {
 		__typename?: "Member"
 		avatar?: string | null
 		name?: string | null
+		description?: string | null
 		position?: string | null
 		rating?: {
 			__typename?: "Rating"
@@ -8091,11 +8092,24 @@ export type MemberFragment = {
 		__typename?: "MetaobjectField"
 		key: string
 		value?: string | null
+		reference?:
+			| { __typename?: "Collection" }
+			| { __typename?: "GenericFile" }
+			| {
+					__typename?: "MediaImage"
+					image?: { __typename?: "Image"; url: any } | null
+			  }
+			| { __typename?: "Metaobject" }
+			| { __typename?: "Page" }
+			| { __typename?: "Product" }
+			| { __typename?: "ProductVariant" }
+			| { __typename?: "Video" }
+			| null
 	}>
 }
 
 export type MembersQueryVariables = Exact<{
-	first?: InputMaybe<Scalars["Int"]["input"]>
+	first: Scalars["Int"]["input"]
 }>
 
 export type MembersQuery = {
@@ -8109,6 +8123,7 @@ export type MembersQuery = {
 				__typename?: "Member"
 				avatar?: string | null
 				name?: string | null
+				description?: string | null
 				position?: string | null
 				rating?: {
 					__typename?: "Rating"
@@ -8121,6 +8136,19 @@ export type MembersQuery = {
 				__typename?: "MetaobjectField"
 				key: string
 				value?: string | null
+				reference?:
+					| { __typename?: "Collection" }
+					| { __typename?: "GenericFile" }
+					| {
+							__typename?: "MediaImage"
+							image?: { __typename?: "Image"; url: any } | null
+					  }
+					| { __typename?: "Metaobject" }
+					| { __typename?: "Page" }
+					| { __typename?: "Product" }
+					| { __typename?: "ProductVariant" }
+					| { __typename?: "Video" }
+					| null
 			}>
 		}>
 	}
@@ -8163,7 +8191,7 @@ export type ProductFragment = {
 }
 
 export type ProductsQueryVariables = Exact<{
-	first?: InputMaybe<Scalars["Int"]["input"]>
+	first: Scalars["Int"]["input"]
 }>
 
 export type ProductsQuery = {
@@ -13229,6 +13257,7 @@ export const MemberFragmentDoc = gql`
 		member @client {
 			avatar
 			name
+			description
 			position
 			rating {
 				scale_min
@@ -13237,6 +13266,13 @@ export const MemberFragmentDoc = gql`
 			}
 		}
 		fields {
+			reference {
+				... on MediaImage {
+					image {
+						url
+					}
+				}
+			}
 			key
 			value
 		}
@@ -13273,7 +13309,7 @@ export const ProductFragmentDoc = gql`
 	}
 `
 export const ArticlesDocument = gql`
-	query articles($first: Int) {
+	query articles($first: Int!) {
 		articles(first: $first) {
 			nodes {
 				...article
@@ -13300,7 +13336,8 @@ export const ArticlesDocument = gql`
  * });
  */
 export function useArticlesQuery(
-	baseOptions?: Apollo.QueryHookOptions<ArticlesQuery, ArticlesQueryVariables>
+	baseOptions: Apollo.QueryHookOptions<ArticlesQuery, ArticlesQueryVariables> &
+		({ variables: ArticlesQueryVariables; skip?: boolean } | { skip: boolean })
 ) {
 	const options = { ...defaultOptions, ...baseOptions }
 	return Apollo.useQuery<ArticlesQuery, ArticlesQueryVariables>(
@@ -13344,8 +13381,8 @@ export type ArticlesQueryResult = Apollo.QueryResult<
 	ArticlesQueryVariables
 >
 export const MembersDocument = gql`
-	query members($first: Int) {
-		metaobjects(type: "member", first: $first) {
+	query members($first: Int!) {
+		metaobjects(first: $first, type: "member") {
 			nodes {
 				...member
 			}
@@ -13371,7 +13408,8 @@ export const MembersDocument = gql`
  * });
  */
 export function useMembersQuery(
-	baseOptions?: Apollo.QueryHookOptions<MembersQuery, MembersQueryVariables>
+	baseOptions: Apollo.QueryHookOptions<MembersQuery, MembersQueryVariables> &
+		({ variables: MembersQueryVariables; skip?: boolean } | { skip: boolean })
 ) {
 	const options = { ...defaultOptions, ...baseOptions }
 	return Apollo.useQuery<MembersQuery, MembersQueryVariables>(
@@ -13410,7 +13448,7 @@ export type MembersQueryResult = Apollo.QueryResult<
 	MembersQueryVariables
 >
 export const ProductsDocument = gql`
-	query products($first: Int) {
+	query products($first: Int!) {
 		products(first: $first) {
 			nodes {
 				...product
@@ -13437,7 +13475,8 @@ export const ProductsDocument = gql`
  * });
  */
 export function useProductsQuery(
-	baseOptions?: Apollo.QueryHookOptions<ProductsQuery, ProductsQueryVariables>
+	baseOptions: Apollo.QueryHookOptions<ProductsQuery, ProductsQueryVariables> &
+		({ variables: ProductsQueryVariables; skip?: boolean } | { skip: boolean })
 ) {
 	const options = { ...defaultOptions, ...baseOptions }
 	return Apollo.useQuery<ProductsQuery, ProductsQueryVariables>(
