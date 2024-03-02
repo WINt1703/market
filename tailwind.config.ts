@@ -11,24 +11,6 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
-			backgroundImage: {
-				"news-letter":
-					"url('https://wint1703.sirv.com/market/news-letter.png')",
-				"natural-food":
-					"url('https://wint1703.sirv.com/market/sections/home/natural-food-backround.png')",
-				"fresh-fruits-offer":
-					"url('https://wint1703.sirv.com/market/sections/home/offer-flesh-fruit.png')",
-				"vegetables-discount":
-					"url('https://wint1703.sirv.com/market/sections/home/offer-discount-vegetable.png')",
-				testimonial:
-					"url('https://wint1703.sirv.com/market/sections/home/testimonial-background.png')",
-				"nuts-cookies":
-					"url('https://wint1703.sirv.com/market/sections/home/nuts-cookie.jpg')",
-				"organic-food":
-					"url('https://wint1703.sirv.com/market/sections/home/oranic-food.jpg')",
-				"organic-juice":
-					"url('https://wint1703.sirv.com/market/sections/home/organic-juice.png')"
-			},
 			colors: {
 				primary: {
 					"100": "#5db0d1",
