@@ -4,7 +4,7 @@ import { FC } from "react"
 
 const NatureFoodSection: FC = () => {
 	return (
-		<section className="grid aspect-video grid-flow-col grid-cols-2 place-items-center bg-natural-food bg-cover">
+		<section className="grid aspect-video grid-flow-col grid-cols-2 place-items-center bg-[url(/sections/home/natural-food.png)] bg-cover">
 			<div className="max-w-[340px] space-y-3">
 				<Typography variant="section">100% Natural Food</Typography>
 				<Typography variant="theme">

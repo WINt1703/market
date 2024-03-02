@@ -16,7 +16,7 @@ const CardOfferWrapper: FC<PropsWithChildren & { backgroundName: string }> = ({
 const OfferSection: FC = () => {
 	return (
 		<section className="flex justify-center gap-x-8 py-40">
-			<CardOfferWrapper backgroundName="bg-fresh-fruits-offer">
+			<CardOfferWrapper backgroundName="bg-[url(/sections/home/offer-flesh-fruit.png)]">
 				<div className="flex flex-col justify-center pl-5 ">
 					<Typography className="text-white" variant="section">
 						Natural!!
@@ -26,7 +26,7 @@ const OfferSection: FC = () => {
 					</Typography>
 				</div>
 			</CardOfferWrapper>
-			<CardOfferWrapper backgroundName="bg-vegetables-discount">
+			<CardOfferWrapper backgroundName="bg-[url(/sections/home/offer-discount-vegetable.png)]">
 				<div className="flex flex-col justify-center pl-5 ">
 					<Typography variant="section">Offer!!</Typography>
 					<Typography

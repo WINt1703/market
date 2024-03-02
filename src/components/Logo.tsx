@@ -1,6 +1,6 @@
+import Typography from "./Typography"
 import Image from "next/image"
 import type { FC } from "react"
-import Typography from "./Typography"
 
 const Logo: FC = () => {
 	return (

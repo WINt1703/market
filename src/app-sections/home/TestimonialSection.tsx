@@ -15,7 +15,7 @@ const TestimonialSection: FC = () => {
 	})
 	console.log(data?.metaobjects.nodes[0])
 	return (
-		<section className="flex h-[900px] flex-col bg-testimonial bg-cover py-20">
+		<section className="flex h-[900px] flex-col bg-[url(/sections/home/testimonial-background.png)] bg-cover py-20">
 			<div className="flex flex-col items-center justify-center gap-y-4">
 				<Typography className="text-center" variant="theme">
 					<Typography variant="section" component="span">

@@ -51,12 +51,12 @@ const AboutUsSection: FC = () => {
 				</Typography>
 				<div className="my-8 space-y-8">
 					<FoodBenefits
-						image="/sections/home/organic-foods-only-home-preview.svg"
+						image="/sections/home/organic-foods.svg"
 						title="Organic Foods Only"
 						description="Simply dummy text of the printing and typesetting industry. Lorem Ipsum"
 					/>
 					<FoodBenefits
-						image="/sections/home/quality-standards-home-preview.svg"
+						image="/sections/home/quality-standards.svg"
 						title="Quality Standards"
 						description="Simply dummy text of the printing and typesetting industry. Lorem Ipsum"
 					/>
